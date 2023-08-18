@@ -1,0 +1,10 @@
+# nějaký komentář :-)
+# změní zobrazení adres stránek v url řádce na jednodušší a hezčí :-)
+
+RewriteEngine On
+
+# pokud prijde pozadavek na jakekoliv url co neexistuje
+# napr. /kontakt tak misto toho zobrazime index.php?stranka=kontakt
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.+) index.php?stranka=$1 [L,QSA]
